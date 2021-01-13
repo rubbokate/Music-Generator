@@ -20,4 +20,14 @@
 
 .is-grouped{
     padding-top: .2cm;
+    margin-left: auto;
+    margin-right: auto;
+    width: 5em
+}
+
+.form{
+        width: 650px;
+        height: 450px;
+        margin: auto;
+        position: relative;
 }
