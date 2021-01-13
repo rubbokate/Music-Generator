@@ -1,0 +1,23 @@
+.title{
+    text-align: center;
+    font-size: 50px;
+    font-family: cursive;
+}
+
+.subtitle{
+    text-align: center;
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.hero-body{
+    background-image: url("./background-1.jpg");
+}
+.artist-elements{
+    padding: .5cm;
+}
+
+.is-grouped{
+    padding-top: .2cm;
+}
