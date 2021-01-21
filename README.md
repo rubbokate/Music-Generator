@@ -7,12 +7,12 @@ So that I can enjoy new playlist that I will be able to enjoy to listen to
 
 
 *acceptance criteria*
-GIVEN i am using a website to find music
-WHEN i type in a genre and hit search
-THEN i am presented a new genre
-WHEN its displayed 
-THEN im showed
-WHEN i click on the thumbnail
-THEN im able to listen to the music
-WHEN i search a genre again 
-THEN im prestend again with a new genre
+GIVEN I am using a website to find music
+WHEN I type in an artist and hit search
+THEN I am presented a new playlist
+WHEN It's displayed 
+THEN I'm showed
+WHEN I click on the thumbnail
+THEN I'm able to listen to the music
+WHEN I search an artist again 
+THEN I'm presented with a new playlist
