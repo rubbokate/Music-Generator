@@ -13,6 +13,7 @@
 
 .hero-body{
     background-image: url("./background-1.jpg");
+    border-bottom: 1px solid black;
     
 }
 .artist-elements{
