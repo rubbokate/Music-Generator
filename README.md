@@ -1,11 +1,10 @@
 # Project-1
 
 *user story*
-as a music lover i want to be able to find more genres easier
-when i find new music i wanna be able to sample it
-i want to be able to see picture of it
-i want it to display the genre so its easier to find
-i want a filter to exclude genres i dont like
+As a music lover I want to be able to find more playlists of music that I enjoy
+When I find new music I wanna be able to sample it, I want the playlist to display, and I want a filter to exclude genres I don’t like
+So that I can enjoy new playlist that I will be able to enjoy to listen to
+
 
 *acceptance criteria*
 GIVEN i am using a website to find music
