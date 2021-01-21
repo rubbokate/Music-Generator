@@ -9,7 +9,7 @@ var lfmartist = "the beatles".split(' ').join('+') //$("#example-input").split('
 
 //$(document).ready(function(){
 //function searchQueryURLSimArt() {
-var qURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=2&artist=" + lfmartist + "&autocorrect[1]&api_key=" + lastFmKey + "&format=json";
+var qURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=2&artist=" + lfmartist + "&autocorrect[1]&api_key=" + lastFmKey + "&format=json"
 $.ajax({
     url: qURL,
     method: "GET"
@@ -30,10 +30,16 @@ $.ajax({
     localStorage.setItem("ytubeTerm", JSON.stringify(ytubeTerm));
 });
 //retrive array and test
-var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
+
+//UNCOMMENT ME LATER
+//var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
 
 //}
 //console.log(searchQueryURLSimArt);
+
+//test item for ytubeSTerm
+let ytubeSTerm = ["A_MjCqQoLLA", "3L4YrGaR8E4","1V_xRb0x9aw"]
+
 
 //shuffle array 1/20/21 
 function shuffleArray(ytubeSTerm) {
