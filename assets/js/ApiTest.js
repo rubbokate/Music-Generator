@@ -6,6 +6,57 @@ const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0"
 //for artist search need + instead of " " --> loop?
 var lfmartist = "the beatles".split(' ').join('+') //$("#example-input").split(' ').join('+')
 
+//YOUTUBE
+var tag = document.createElement('script');
+var videoID = "A_MjCqQoLLA"
+
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: videoID,
+        events: {
+            'onError': onPlayerError,
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+//YOUTUBE
+
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    $('#player').show();
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+}
+
+function onPlayerError(e) {
+  console.log("error on the video id. Iframe is hiding");
+  $('#player').hide();
+  console.log(e);
+};
+
 
 //$(document).ready(function(){
 //function searchQueryURLSimArt() {
@@ -32,13 +83,13 @@ $.ajax({
 //retrive array and test
 
 //UNCOMMENT ME LATER
-//var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
+var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
 
 //}
 //console.log(searchQueryURLSimArt);
 
 //test item for ytubeSTerm
-let ytubeSTerm = ["A_MjCqQoLLA", "3L4YrGaR8E4","1V_xRb0x9aw"]
+//let ytubeSTerm = ["A_MjCqQoLLA", "3L4YrGaR8E4","1V_xRb0x9aw"]
 
 
 //shuffle array 1/20/21 
@@ -51,7 +102,7 @@ function shuffleArray(ytubeSTerm) {
 shuffleArray(ytubeSTerm);
 
 //test to see if it shuffles
-console.log(ytubeSTerm);
+//console.log(ytubeSTerm);
 
 
 //Youtube api seperate component, can be moved
@@ -72,7 +123,6 @@ ytubeSTerm.forEach(function (yQueryLoop) {
         //example of JSON syntax for youtube API, video title 
         var ytReturnVidTitle = ytResponse.items[0].snippet.title
         console.log(ytReturnVidTitle);
-    }).then(function (appendYtHtml) {
 
     });
 });
