@@ -25,7 +25,7 @@ In this application we used Bulma, Font Awesome, the youtube API, and last fm AP
 
 ## Link
 
-[Link to Webpage](https://rubbokate.github.io/Project-1/)
+[Link to Webpage](https://rubbokate.github.io/Music-Generator/)
 
 ## Screenshot
 
