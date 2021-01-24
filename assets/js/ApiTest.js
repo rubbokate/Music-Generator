@@ -3,64 +3,18 @@ const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
 const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0"
 
-//for artist search need + instead of " " --> loop?
-var lfmartist = "the beatles".split(' ').join('+') //$("#example-input").split(' ').join('+')
-
-//YOUTUBE
-var tag = document.createElement('script');
-var videoID = "A_MjCqQoLLA"
 
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '390',
-        width: '640',
-        videoId: videoID,
-        events: {
-            'onError': onPlayerError,
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-        }
-    });
-}
-//YOUTUBE
+$(document).ready(function(){
+    //for artist search need + instead of " " --> loop?
+    //var lfmartist = $(".input");  //"the beatles" //$(".input")
+    //need to work on jquery to save input from form and submit on btn press
+    var lfmartist = "the beatles"
+   // console.log(lfmartist);
 
 
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-    $('#player').show();
-    event.target.playVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING) {
-    }
-}
-
-function stopVideo() {
-    player.stopVideo();
-}
-
-function onPlayerError(e) {
-  console.log("error on the video id. Iframe is hiding");
-  $('#player').hide();
-  console.log(e);
-};
-
-
-//$(document).ready(function(){
 //function searchQueryURLSimArt() {
-var qURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=2&artist=" + lfmartist + "&autocorrect[1]&api_key=" + lastFmKey + "&format=json"
+var qURL = "http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=2&artist=" + lfmartist.split(' ').join('+') + "&autocorrect[1]&api_key=" + lastFmKey + "&format=json"
 $.ajax({
     url: qURL,
     method: "GET"
@@ -87,10 +41,6 @@ var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
 
 //}
 //console.log(searchQueryURLSimArt);
-
-//test item for ytubeSTerm
-//let ytubeSTerm = ["A_MjCqQoLLA", "3L4YrGaR8E4","1V_xRb0x9aw"]
-
 
 //shuffle array 1/20/21 
 function shuffleArray(ytubeSTerm) {
@@ -120,10 +70,72 @@ ytubeSTerm.forEach(function (yQueryLoop) {
         var ytReturnVidId = ytResponse.items[0].id.videoId
         console.log(ytReturnVidId);
 
-        //example of JSON syntax for youtube API, video title 
+        //placeholder for video id 
+        //var ytReturnVidId = "1V_xRb0x9aw"
+
+        //retrieve video title 
         var ytReturnVidTitle = ytResponse.items[0].snippet.title
         console.log(ytReturnVidTitle);
+        
+        //retrieve video thumbnails
+        var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default
+        console.log(ytReturnThumb);
 
+        var comboResults = `<li> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
+
+        //append to document with above results, use comboResults as inside html text
+        $("#ytResults").append(comboResults);
+        
+
+        var dummyTest = "Test is success"
+        
     });
+
+});
+    console.log(dummyTest);
 });
 
+
+//YOUTUBE
+var tag = document.createElement('script');
+var videoID = "";
+
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: videoID,
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    $('#player').show();
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+}
+
+//YOUTUBE
