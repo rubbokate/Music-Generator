@@ -120,10 +120,18 @@ ytubeSTerm.forEach(function (yQueryLoop) {
         var ytReturnVidId = ytResponse.items[0].id.videoId
         console.log(ytReturnVidId);
 
-        //example of JSON syntax for youtube API, video title 
+        //retrieve video title 
         var ytReturnVidTitle = ytResponse.items[0].snippet.title
         console.log(ytReturnVidTitle);
+        
+        //retrieve video thumbnails
+        var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default
+        console.log(ytReturnThumb);
 
+        const dummyTest = "Test is success"
+        
     });
+
 });
+    console.log(dummyTest);
 
