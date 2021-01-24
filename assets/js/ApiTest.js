@@ -8,7 +8,7 @@ var lfmartist = "the beatles".split(' ').join('+') //$("#example-input").split('
 
 //YOUTUBE
 var tag = document.createElement('script');
-var videoID = "A_MjCqQoLLA"
+var videoID = "";
 
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -25,14 +25,11 @@ function onYouTubeIframeAPIReady() {
         width: '640',
         videoId: videoID,
         events: {
-            'onError': onPlayerError,
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         }
     });
 }
-//YOUTUBE
-
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
@@ -51,11 +48,7 @@ function stopVideo() {
     player.stopVideo();
 }
 
-function onPlayerError(e) {
-  console.log("error on the video id. Iframe is hiding");
-  $('#player').hide();
-  console.log(e);
-};
+//YOUTUBE
 
 
 //$(document).ready(function(){
@@ -128,7 +121,13 @@ ytubeSTerm.forEach(function (yQueryLoop) {
         var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default
         console.log(ytReturnThumb);
 
-        const dummyTest = "Test is success"
+        var comboResults = '<li> <a href="https://www.youtube.com/watch?v=' + ytReturnVidId + '">' + ytReturnVidTitle + '</a>' + '</li>'
+
+        //append to document with above results, use comboResults as inside html text
+        $("#ytResults").append(comboResults);
+        
+
+        var dummyTest = "Test is success"
         
     });
 
