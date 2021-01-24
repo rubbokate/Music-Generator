@@ -43,10 +43,10 @@
             <div class="field-1">
                 <label class="label"></label>
                 <div class="control">
-                    <input class="input is-success" type="text" placeholder="Artist">
+                    <input class="input is-success" id="artistInput" type="text" placeholder="Artist">
                 </div>
-            </div>
-            <!-- <div class="field-2">
+                <!--</div> -->
+                <!-- <div class="field-2">
                 <label class="label"></label>
                 <div class="control">
                     <input class="input is-danger" type="text" placeholder="Artist 2">
@@ -61,27 +61,25 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-warning fas fa-search"></button>
+                        <button class="button is-warning fas fa-search" id="goEntry"></button>
                     </div>
                 </div>
-                
-            <!-- Div for list items to click on-->
-            <div class="content">
-                <ol id="ytResults" type="1">
-                </ol>
-
-                <div class="wrapper">
-                    <div class="youtube" data-embed="">
-                        <div class="play-button"></div>
-                    </div>
-                </div>
-                <!--Test Div-->
-                <div class="player" id="player"></div>
             </div>
         </div>
 
-
-
+        <div class="content">
+            <!-- Div for list items to click on-->
+            <ol id="ytResults" type="1">
+            </ol>
+            <!-- youtube element-->
+            <div class="wrapper">
+                <div class="youtube" data-embed="">
+                    <div class="play-button"></div>
+                </div>
+            </div>
+            <!--Test Div-->
+            <div class="player" id="player"></div>
+        </div>
 
 </body>
 
