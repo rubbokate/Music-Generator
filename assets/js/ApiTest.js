@@ -1,9 +1,13 @@
 //pull from LastFM, no play funtionality
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
+
+const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw"
+
 // const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
  const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //javier 2nd test key
 //const youtubeKey ="AIzaSyA3bUZtYtaKf3MzhjEqjf3RznY_1E2LuQY" //Cole's yt api key
+
 
 
 
@@ -38,7 +42,7 @@ $(document).ready(function () {
         //save to local storage
         localStorage.setItem("ytubeTerm", JSON.stringify(ytubeTerm));
     });
-    //retrive array and test
+    //retrieve array and test
 
     //UNCOMMENT ME LATER
     var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
