@@ -2,7 +2,7 @@
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
 
-const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw"
+//const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw" Kaitlyn's yt key
 
 // const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
  const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //Javier 2nd test key
