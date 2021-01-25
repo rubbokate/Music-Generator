@@ -103,7 +103,7 @@ function findArtist() {
 
             //append to document with above results, use comboResults as inside html text
             $("#ytResults").append(comboResults);
-
+localStorage.clear()
             return ytReturnVidId
 
         });
