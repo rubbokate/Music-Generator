@@ -1,7 +1,9 @@
 //pull from LastFM, no play funtionality
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
-const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0"
+// const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
+ const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //javier 2nd test key
+//const youtubeKey ="AIzaSyA3bUZtYtaKf3MzhjEqjf3RznY_1E2LuQY" //Cole's yt api key
 
 
 
@@ -11,7 +13,7 @@ $(document).ready(function () {
     //for artist search need + instead of " " --> loop?
     //var lfmartist = $(".input");  //"the beatles" //$(".input")
     //need to work on jquery to save input from form and submit on btn press
-    var lfmartist = "the beatles"
+    var lfmartist = "muse"
     // console.log(lfmartist);
     //needs on click jquery somewhere around here
 
@@ -69,18 +71,20 @@ $(document).ready(function () {
             console.log(ytResponse);
 
             //successfully retrives videoId
-            var ytReturnVidId = ytResponse.items[0].id.videoId
+           var ytReturnVidId = ytResponse.items[0].id.videoId
             console.log(ytReturnVidId);
 
             //placeholder for video id 
-            //var ytReturnVidId = "1V_xRb0x9aw"
+           // var ytReturnVidId = "1V_xRb0x9aw"
 
+            //pl for vid title
+            //var ytReturnVidTitle = "Example Title"
             //retrieve video title 
-            var ytReturnVidTitle = ytResponse.items[0].snippet.title
+           var ytReturnVidTitle = ytResponse.items[0].snippet.title
             console.log(ytReturnVidTitle);
 
             //retrieve video thumbnails
-            var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default
+            var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default.url
             console.log(ytReturnThumb);
 
             var comboResults = `<li> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
