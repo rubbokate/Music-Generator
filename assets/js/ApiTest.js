@@ -2,13 +2,16 @@
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
 
-const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw"
+
+//const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw" Kaitlyn's yt key
 
 // const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
- const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //Javier 2nd test key
+const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //Javier 2nd test key
 //const youtubeKey ="AIzaSyA3bUZtYtaKf3MzhjEqjf3RznY_1E2LuQY" //Cole's yt api key
 
 
+$(document).ready(function () {
+});
 
 
 $(document).ready(function musicNote() {
@@ -52,6 +55,9 @@ $(document).ready(function musicNote() {
 
     //shuffle array 1/20/21 
     function shuffleArray(ytubeSTerm) {
+        if (ytubeSTerm.length == 0) {
+            console.log('ytubeSTerm is 0')
+        }
         for (let i = ytubeSTerm.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [ytubeSTerm[i], ytubeSTerm[j]] = [ytubeSTerm[j], ytubeSTerm[i]];
@@ -63,8 +69,6 @@ $(document).ready(function musicNote() {
     //console.log(ytubeSTerm);
 
 
-    
-
     //Youtube api seperate component, can be moved
     ytubeSTerm.forEach(function (yQueryLoop) {
         console.log(yQueryLoop);
@@ -73,20 +77,21 @@ $(document).ready(function musicNote() {
             url: qURLy,
             method: "GET"
         }).then(function (ytResponse) {
-            console.log(qURLy);
+            console.log("qURLy is: " + qURLy);
             console.log(ytResponse);
 
             //successfully retrives videoId
-           var ytReturnVidId = ytResponse.items[0].id.videoId
-            console.log(ytReturnVidId);
+
+            var ytReturnVidId = ytResponse.items[0].id.videoId
+            console.log("ytReturnVidId is: " + ytReturnVidId);
 
             //placeholder for video id 
-           // var ytReturnVidId = "1V_xRb0x9aw"
+            // var ytReturnVidId = "1V_xRb0x9aw"
 
             //pl for vid title
             //var ytReturnVidTitle = "Example Title"
             //retrieve video title 
-           var ytReturnVidTitle = ytResponse.items[0].snippet.title
+            var ytReturnVidTitle = ytResponse.items[0].snippet.title
             console.log(ytReturnVidTitle);
 
             //retrieve video thumbnails
@@ -97,15 +102,14 @@ $(document).ready(function musicNote() {
 
             //append to document with above results, use comboResults as inside html text
             $("#ytResults").append(comboResults);
+            localStorage.clear()
+            return ytReturnVidId
 
         });
     });
-});
+};
 
-
-/* //YOUTUBE
 var tag = document.createElement('script');
-var videoID = "";
 
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -120,13 +124,14 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '390',
         width: '640',
-        videoId: videoID,
+        videoId: 'NdSMeBrNp4A',
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
         }
     });
 }
+
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
@@ -141,8 +146,9 @@ function onPlayerStateChange(event) {
     }
 }
 
+
 function stopVideo() {
     player.stopVideo();
 }
+//YOUTUBE
 
-//YOUTUBE */
