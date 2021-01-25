@@ -29,4 +29,4 @@ In this application we used Bulma, Font Awesome, the youtube API, and last fm AP
 
 ## Screenshot
 
-![webpage](src/)
+![Screenshot](./assets/screenshot.jpeg)
