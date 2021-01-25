@@ -6,6 +6,8 @@ const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0"
 
 
 $(document).ready(function () {
+    //variable for # of results returned
+    var resLength = "1"
     //for artist search need + instead of " " --> loop?
     //var lfmartist = $(".input");  //"the beatles" //$(".input")
     //need to work on jquery to save input from form and submit on btn press
@@ -14,7 +16,7 @@ $(document).ready(function () {
     //needs on click jquery somewhere around here
 
     //function searchQueryURLSimArt() {
-    var qURL = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=2&artist=" + lfmartist.split(' ').join('+') + "&autocorrect[1]&api_key=" + lastFmKey + "&format=json"
+    var qURL = `https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&limit=${resLength}&artist=${lfmartist.split(' ').join('+')}&autocorrect[1]&api_key=${lastFmKey}&format=json`
     $.ajax({
         url: qURL,
         method: "GET"
@@ -58,7 +60,7 @@ $(document).ready(function () {
     //Youtube api seperate component, can be moved
     ytubeSTerm.forEach(function (yQueryLoop) {
         console.log(yQueryLoop);
-        var qURLy = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + yQueryLoop.split(' ').join('+') + "&type=video&key=" + youtubeKey
+        var qURLy = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${yQueryLoop.split(' ').join('+')}&type=video&key=${youtubeKey}`
         $.ajax({
             url: qURLy,
             method: "GET"
