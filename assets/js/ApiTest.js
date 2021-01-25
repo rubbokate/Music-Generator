@@ -1,7 +1,7 @@
 //pull from LastFM, no play funtionality
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
-const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0"
+const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw"
 
 
 
@@ -36,7 +36,7 @@ $(document).ready(function () {
         //save to local storage
         localStorage.setItem("ytubeTerm", JSON.stringify(ytubeTerm));
     });
-    //retrive array and test
+    //retrieve array and test
 
     //UNCOMMENT ME LATER
     var ytubeSTerm = JSON.parse(localStorage.getItem("ytubeTerm"));
