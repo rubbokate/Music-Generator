@@ -110,7 +110,8 @@ localStorage.clear()
     });
 };
  
-    var tag = document.createElement('script');
+
+    /*var tag = document.createElement('script');
 
 
     tag.src = "https://www.youtube.com/iframe_api";
@@ -150,6 +151,6 @@ localStorage.clear()
 
     function stopVideo() {
         player.stopVideo();
-    }
-//YOUTUBE
+    } */
+//YOUTUBE 
 
