@@ -69,7 +69,6 @@ function findArtist() {
 
     //test to see if it shuffles
     //console.log(ytubeSTerm);
-}
 
     //Youtube api seperate component, can be moved
     ytubeSTerm.forEach(function (yQueryLoop) {
@@ -109,7 +108,8 @@ function findArtist() {
 
         });
     });
-
+};
+ 
     var tag = document.createElement('script');
 
 
