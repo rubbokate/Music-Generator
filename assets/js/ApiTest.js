@@ -1,4 +1,3 @@
-//pull from LastFM, no play funtionality
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
 
