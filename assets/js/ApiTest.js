@@ -2,7 +2,7 @@
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
 // const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
- const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //javier 2nd test key
+ const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //Javier 2nd test key
 //const youtubeKey ="AIzaSyA3bUZtYtaKf3MzhjEqjf3RznY_1E2LuQY" //Cole's yt api key
 
 
@@ -87,7 +87,7 @@ $(document).ready(function () {
             var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default.url
             console.log(ytReturnThumb);
 
-            var comboResults = `<li> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
+            var comboResults = `<li> <img src="${ytReturnThumb}" alt="thumnail"> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
 
             //append to document with above results, use comboResults as inside html text
             $("#ytResults").append(comboResults);
@@ -97,7 +97,7 @@ $(document).ready(function () {
 });
 
 
-//YOUTUBE
+/* //YOUTUBE
 var tag = document.createElement('script');
 var videoID = "";
 
@@ -139,4 +139,4 @@ function stopVideo() {
     player.stopVideo();
 }
 
-//YOUTUBE
+//YOUTUBE */
