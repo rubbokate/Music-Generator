@@ -11,13 +11,13 @@ const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw"
 
 
 
-$(document).ready(function () {
+$(document).ready(function musicNote() {
     //variable for # of results returned
     var resLength = "1"
     //for artist search need + instead of " " --> loop?
     //var lfmartist = $(".input");  //"the beatles" //$(".input")
     //need to work on jquery to save input from form and submit on btn press
-    var lfmartist = "muse"
+    var lfmartist = ""
     // console.log(lfmartist);
     //needs on click jquery somewhere around here
 
@@ -62,6 +62,8 @@ $(document).ready(function () {
     //test to see if it shuffles
     //console.log(ytubeSTerm);
 
+
+    
 
     //Youtube api seperate component, can be moved
     ytubeSTerm.forEach(function (yQueryLoop) {
