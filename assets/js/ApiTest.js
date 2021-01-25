@@ -1,7 +1,13 @@
 //pull from LastFM, no play funtionality
 const lastFmKey = "3b2324e54073b3dc0b3f4e2407ba58d1"
 const lastFmSecret = "82409a163bce82966c42be3a35f3d950"
-const youtubeKey = 'AIzaSyCDp0-DJQRMNVuTtbnVKX-81eIs65tiU2c'
+
+
+//const youtubeKey = "AIzaSyDhTehhaCl-IoNtfuRz4ePLHX7iO98lljw" Kaitlyn's yt key
+
+// const youtubeKey = "AIzaSyAaQzZrnuJSEVUnyYXGYHcEKoluy22eyu0" //Javier's 1st api key
+ const youtubeKey = "AIzaSyBsUSXEw1JU8u8efirUOm8mhbuVJD3YZVE" //Javier 2nd test key
+//const youtubeKey ="AIzaSyA3bUZtYtaKf3MzhjEqjf3RznY_1E2LuQY" //Cole's yt api key
 
 
 $(document).ready(function() {
@@ -13,8 +19,10 @@ function findArtist() {
     //for artist search need + instead of " " --> loop?
     //var lfmartist = $(".input");  //"the beatles" //$(".input")
     //need to work on jquery to save input from form and submit on btn press
+
     var lfmartist = document.getElementById("artistInput").value
     console.log("lfmartist is:" + lfmartist)
+
     // console.log(lfmartist);
     //needs on click jquery somewhere around here
 
@@ -75,21 +83,24 @@ function findArtist() {
             console.log(ytResponse);
 
             //successfully retrives videoId
+
             var ytReturnVidId = ytResponse.items[0].id.videoId
             console.log("ytReturnVidId is: " + ytReturnVidId);
 
             //placeholder for video id 
-            //var ytReturnVidId = "1V_xRb0x9aw"
+           // var ytReturnVidId = "1V_xRb0x9aw"
 
+            //pl for vid title
+            //var ytReturnVidTitle = "Example Title"
             //retrieve video title 
-            var ytReturnVidTitle = ytResponse.items[0].snippet.title
+           var ytReturnVidTitle = ytResponse.items[0].snippet.title
             console.log(ytReturnVidTitle);
 
             //retrieve video thumbnails
-            var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default
+            var ytReturnThumb = ytResponse.items[0].snippet.thumbnails.default.url
             console.log(ytReturnThumb);
 
-            var comboResults = `<li> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
+            var comboResults = `<li> <img src="${ytReturnThumb}" alt="thumnail"> <a href="https://www.youtube.com/watch?v=${ytReturnVidId}" target="_blank" rel="noopener noreferrer">${ytReturnVidTitle}</a></li>`
 
             //append to document with above results, use comboResults as inside html text
             $("#ytResults").append(comboResults);
@@ -98,6 +109,7 @@ function findArtist() {
 
         });
     });
+
     var tag = document.createElement('script');
 
 
@@ -121,6 +133,7 @@ function findArtist() {
         });
     }
 
+
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
         $('#player').show();
@@ -134,7 +147,9 @@ function findArtist() {
         }
     }
 
+
     function stopVideo() {
         player.stopVideo();
     }
 //YOUTUBE
+
